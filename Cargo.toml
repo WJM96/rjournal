@@ -1,0 +1,20 @@
+[package]
+name = "rjournal"
+version = "0.1.0"
+authors = ["wes"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies.gtk]
+version = "0.7.0"
+features=["v3_16"]
+
+[dependencies.gio]
+version = ""
+features = ["v2_44"]
+
+[dependencies]
+log = "0.4"
+fern = {version = "0.5", features = ["colored"] }
+chrono = "0.4"
