@@ -14,6 +14,9 @@ features=["v3_16"]
 version = ""
 features = ["v2_44"]
 
+[dependencies.sourceview]
+version = "0.7.0"
+
 [dependencies]
 log = "0.4"
 fern = {version = "0.5", features = ["colored"] }

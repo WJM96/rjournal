@@ -1,10 +1,11 @@
 use gtk::prelude::*;
 use gtk::*;
 use log::*;
+use sourceview::*;
 
 use crate::actions;
 
-fn build_top_menu(window: &ApplicationWindow, text_view: &TextView) -> MenuBar {
+fn build_top_menu(window: &ApplicationWindow, text_view: &sourceview::View) -> MenuBar {
     let window_weak = window.downgrade();
     let text_view = text_view.clone();
 
@@ -57,7 +58,9 @@ pub fn build_ui(application: &gtk::Application) {
     vbox.set_orientation(gtk::Orientation::Vertical);
 
     let text_scroll = gtk::ScrolledWindow::new(gtk::NONE_ADJUSTMENT, gtk::NONE_ADJUSTMENT);
-    let text_view = gtk::TextViewBuilder::new().accepts_tab(true).build();
+    let text_view = sourceview::View::new();
+    text_view.set_show_line_numbers(true);
+    // let text_view = gtk::TextViewBuilder::new().accepts_tab(true).build();
     text_scroll.add(&text_view);
 
     let menu = build_top_menu(&window, &text_view);
