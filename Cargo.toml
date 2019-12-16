@@ -14,8 +14,12 @@ features=["v3_16"]
 version = ""
 features = ["v2_44"]
 
+[dependencies.glib]
+version="0.8.2"
+
 [dependencies.sourceview]
 version = "0.7.0"
+features = ["v3_14"]
 
 [dependencies]
 log = "0.4"
